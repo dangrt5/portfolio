@@ -38,7 +38,7 @@ Base csss
 @media (min-width: 320px) and (max-width: 480px) {
   /* Mobile Phones */
   .technology {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
