@@ -34,6 +34,20 @@ Support email: mylifedesign143@gmail.com
 /*
 Base csss
 */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Mobile Phones */
+  .technology {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.navbar-nav > .nav-item > .nav-link {
+    font-size: .75rem;
+  }
+}
+
 html, body {
   height: 100%;
 }
@@ -921,7 +935,7 @@ Pricing tables
   color: #fff;
 }
 
-/* 
+/*
 Portfolio styles
 */
 .work-header {
