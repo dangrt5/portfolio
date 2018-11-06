@@ -6,6 +6,7 @@ $(".clear-btn").click(() => {
 	$(".message-input").val("");
 	$(".invalid-feedback").hide();
 	$(".data-status").empty();
+	$("input, .message-input").attr("disabled", null);
 });
 
 
