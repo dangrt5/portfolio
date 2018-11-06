@@ -40,7 +40,7 @@ if($output['success'] !== null) {
 
 //Set up email object
 $mail = new PHPMailer\PHPMailer\PHPMailer;
-$mail->SMTPDebug = 3;           // Enable verbose debug output. Change to 0 to disable debugging output.
+$mail->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
 
 $mail->isSMTP();                // Set mailer to use SMTP.
 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers.
@@ -68,7 +68,7 @@ $mail->isHTML(true);                                  // Set email format to HTM
 $message['message'] = nl2br($message['message']); //convert newline characters to line break html tags
 
 $mail->Body    = $message['message'];
-$mail->AltBody = htmlentities($messages['message']);
+$mail->AltBody = htmlentities($message['message']);
 
 
 // Attempt email send, output result to client
@@ -78,7 +78,10 @@ if(!$mail->send()) {
 } else {
     $output['success'] = true;
 }
-echo json_encode($output);
+
+$outputJSON = json_encode($output);
+
+print($outputJSON);
 
 
 
