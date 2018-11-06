@@ -309,18 +309,27 @@
                 </div><!--row-->
                 <div class="row">
                     <div class="col-md-5 ml-auto mr-auto margin-b-30 scrollReveal sr-left">
-                        <form method="POST" action="assets/php_mailer/mail_handler.php" class="xone-contact">
+                        <form class="xone-contact">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class=" margin-b-20">
-                                        <input type="text" name="name" class="form-control" placeholder="Full Name...." autocomplete="off" />
+                                    <div class=" margin-b-20 input-group">
+                                        <input type="text" name="name" class="form-control name-input" placeholder="Full Name...." autocomplete="off" />
+                                        <div class="invalid-feedback">
+                                            Please provide a valid name.
+                                        </div>
                                     </div>
-                                    <div class=" margin-b-20">
-                                        <input type="text" name="email" class="form-control" placeholder="Email Address...." autocomplete="off" />
+                                    <div class=" margin-b-20 input-group">
+                                        <input type="text" name="email" class="form-control email-input" placeholder="Email Address...." autocomplete="off" />
+                                        <div class="invalid-feedback">
+                                            Please provide a valid email.
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <textarea name="message" class="form-control margin-b-20" rows="5" placeholder="Message...."></textarea>
+                                <div class="col-sm-12 input-group">
+                                    <textarea name="message" class="form-control margin-b-20 message-input" rows="5" placeholder="Message...." ></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid message.
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -331,6 +340,11 @@
                             <div class="row">
                                 <div class="col-sm-12 text-center">
                                     <button type="submit" name="submit" class="btn btn-lg btn-skin-border btn-block margin-b-20">Send Message</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <button type="button" name="clear" class="btn btn-lg btn-skin-border btn-block margin-b-20 clear-btn">Clear</button>
                                 </div>
                             </div>
                         </form><!--form end-->

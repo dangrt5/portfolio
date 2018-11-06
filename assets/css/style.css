@@ -64,6 +64,9 @@ Base csss
   height: 100%;
 }
 
+.invalid-feedback {
+  border-bottom: 2px solid #f5f5f5;
+}
 
 html, body {
   height: 100%;
