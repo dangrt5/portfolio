@@ -64,8 +64,12 @@ Base csss
   height: 100%;
 }
 
-.invalid-feedback {
-  border-bottom: 2px solid #f5f5f5;
+button {
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  cursor: pointer;
 }
 
 html, body {
@@ -501,7 +505,7 @@ Button style
 }
 
 .btn-skin {
-  background-color: #bfa67a;
+  background-color: #bfa67a96;
   color: #fff;
 }
 .btn-skin:hover, .btn-skin:focus {
@@ -1041,7 +1045,7 @@ Portfolio styles
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.7rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #999;
 }
 
@@ -1784,7 +1788,7 @@ Footer styles
     position: absolute;
     right: 15px;
     border: 0px;
-    top: -3px;
+    top: -18px;
   }
 
   .transparent-nav.bg-dark {
@@ -1804,5 +1808,11 @@ Footer styles
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .navbar-light {
+    padding: 20px 0;
   }
 }
