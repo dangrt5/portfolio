@@ -1,5 +1,6 @@
-$(".name-input").click(() => $(".name-input + .invalid-feedback").hide());
-$(".email-input").click(() => $(".email-input + .invalid-feedback").hide());
+$(".name-input").click(() => $(".invalid-name").hide());
+$(".email-input").click(() => $(".invalid-email").hide());
+$(".message-input").click(() => $(".invalid-message").hide());
 $(".clear-btn").click(() => {
 	$(".name-input").val("");
 	$(".email-input").val("");
@@ -8,6 +9,8 @@ $(".clear-btn").click(() => {
 	$(".data-status").empty();
 	$("input, .message-input").attr("disabled", null);
 });
+
+$(document).scroll(() => $(".navbar-collapse").removeClass("show"));
 
 
 $('.xone-contact').submit(function (e) {
@@ -22,28 +25,36 @@ $('.xone-contact').submit(function (e) {
 	var $submit = $form.find('input[name="submit"]');
 	var $dataStatus = $form.find('.data-status');
 
-	var emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-	var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+	var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+	var nameRegex = /^[a-zA-Z\s]+$/;
 
 	var formValidation = {
 		name: false,
-		email: false
+		email: false,
+		message: false
 	};
-	if (!nameRegex.test($(".name-input").val())) {
-		$(".name-input + .invalid-feedback").show();
+	if (!nameRegex.test($(".name-input").val().trim())) {
+		$(".invalid-name").show();
 	} else {
-		$(".name-input + .invalid-feedback").hide();
+		$(".invalid-name").hide();
 		formValidation.name = true;
 	}
 
-	if (!emailRegex.test($(".email-input").val())) {
-		$(".email-input + .invalid-feedback").show();
+	if (!emailRegex.test($(".email-input").val().trim())) {
+		$(".invalid-email").show();
 	} else {
-		$(".email-input + .invalid-feedback").hide();
+		$(".invalid-email").hide();
 		formValidation.email = true;
 	}
 
-	if (!formValidation.name || !formValidation.email) {
+	if($(".message-input").val().trim() !== "") {
+		$(".invalid-message").hide();
+		formValidation.message = true;
+	} else {
+		$(".invalid-message").show();
+	}
+
+	if (!formValidation.name || !formValidation.email || !formValidation.message) {
 		return;
 	} else {
 		$email.attr('disabled', 'disabled');
