@@ -26,7 +26,7 @@ $('.xone-contact').submit(function (e) {
 	var $dataStatus = $form.find('.data-status');
 
 	var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-	var nameRegex = /^[a-zA-Z\s]+$/;
+	var nameRegex = /^[a-zA-Z\s-]+$/;
 
 	var formValidation = {
 		name: false,
@@ -74,7 +74,7 @@ $('.xone-contact').submit(function (e) {
 				$name.val('').removeAttr('disabled');
 				$message.val('').removeAttr('disabled');
 				$submit.removeAttr('disabled');
-				$dataStatus.html('<div class="alert alert-danger"><strong>Message Sent!</strong></div>').fadeIn();
+				$dataStatus.html('<div class="alert alert-success"><strong>Message Sent!</strong></div>').fadeIn();
 			}
 		});
 	}
