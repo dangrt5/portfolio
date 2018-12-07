@@ -74,7 +74,7 @@ $('.xone-contact').submit(function (e) {
 				$name.val('').removeAttr('disabled');
 				$message.val('').removeAttr('disabled');
 				$submit.removeAttr('disabled');
-				$dataStatus.html('<div class="alert alert-danger"><strong>Message Sent!</strong></div>').fadeIn();
+				$dataStatus.html('<div class="alert alert-success"><strong>Message Sent!</strong></div>').fadeIn();
 			}
 		});
 	}
