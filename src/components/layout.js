@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
+        className="bg-red-700 shadow"
         style={{
           margin: `0 auto`,
           maxWidth: 960,
