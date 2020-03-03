@@ -1,20 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import skills from "../images/up-level.svg"
+import softwareEngineerImg from "../images/software-engineer.svg"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="Randy Dang">
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="flex justify-center flex-col items-center pt-8 mb-8">
+      <h1 className="mb-1 font-medium text-4xl">Randy Dang</h1>
+      <h1 className="m-0 font-light text-3xl">Software Engineer</h1>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <div className="flex items-center mb-4">
+      <img className="w-12 mr-4" src={softwareEngineerImg} />
+      <p className="text-2xl">Software Engineer</p>
+    </div>
+    <div className="flex items-center mb-4">
+      <img className="w-12 mr-4" src={softwareEngineerImg} />
+      <p className="text-2xl leading-relaxed">
+        Focusing on: Python, TailwindCSS
+      </p>
+    </div>
+    <div className="flex items-center">
+      <img className="w-12 mr-4" src={skills} />
+      <p className="text-2xl leading-relaxed">
+        Stack: JavaScript, React, Node, PostgreSQL, MongoDB
+      </p>
+    </div>
+
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
 
